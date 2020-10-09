@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace textWork
 {
     internal class Program
     {
-        public static int punctMarks(string text)
+        public static int PunctMarks(string text)
         {
             int count = 0;
             char[] ch = text.ToCharArray();
@@ -35,7 +35,7 @@ namespace textWork
         public static string TheLongestWord(string text)
         {
 
-            string[] words = remover(text);
+            string[] words = Remover(text);
             int max = 0;
             string maxWord = " ";
             foreach (string word in words)
@@ -50,7 +50,7 @@ namespace textWork
             return maxWord;
         } // Находим самое длинное слово
 
-        public static string wordConverter(string word) // Изменяем слово в зависимости от четности его длины
+        public static string WordConverter(string word) // Изменяем слово в зависимости от четности его длины
         {
             int length = word.Length;
             if ((length % 2) == 0)
@@ -66,24 +66,15 @@ namespace textWork
 
             return word;
         }
-        public static string[] remover(string text)
+        public static string[] Remover(string text)
         {
             string[] words = text.Split(' ', '.', ',', '!', '?', '(', ')', '"', '\'', '*', ';', ':');
             return words;
         }
 
-        /*public static string[] uniqueWords(string[] words)
+        /*public static string[] UniqueWords(string[] words)
         {
-            foreach (string word in words)
-            {
-                for (int i = 0; i <= words.Length; i++)
-                {
-                    if (word == words[i])
-                    {
-                        words.Remove(word[i]);
-                    }
-                }
-            }
+            
         }*/
         
         public static void Main(string[] args)
@@ -92,7 +83,7 @@ namespace textWork
             var text = Console.ReadLine();
 
             Console.WriteLine("Знаки пунктуации:");
-            Console.WriteLine(punctMarks(text));
+            Console.WriteLine(PunctMarks(text));
             
             Console.Write("Предложения: ");
             foreach (string sentence in Sentences(text))
@@ -100,10 +91,9 @@ namespace textWork
                 Console.WriteLine(sentence);
             }
             Console.WriteLine("Самое длинное слово:");
-            Console.WriteLine(wordConverter(TheLongestWord(text)));
+            Console.WriteLine(WordConverter(TheLongestWord(text)));
             
             //Console.WriteLine("Уникальные слова:");
 
         }
     }
-}
