@@ -55,7 +55,7 @@ namespace textWork
             int length = word.Length;
             if ((length % 2) == 0)
             {
-                word = word.Remove;
+                //word = word.Remove;
             }
             else
             {
@@ -102,7 +102,7 @@ namespace textWork
             Console.WriteLine("Самое длинное слово:");
             Console.WriteLine(wordConverter(TheLongestWord(text)));
             
-            Console.WriteLine("Уникальные слова:");
+            //Console.WriteLine("Уникальные слова:");
 
         }
     }
